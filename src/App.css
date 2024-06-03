@@ -1,38 +1,304 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.search-and-list{
+  margin-top: 70px;
+}
+.searchbar-container{
+  display: flex;
+  justify-content: center;
+}
+
+.searchbar{
+  border-radius: 20px;
+  margin: 10px;
+  height: 40px;
+  width: 90vw;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+.search-icon{
+  position: absolute;
+  right:6vw;
+  top:100px;
+  width: 20px; 
+  height: 20px;
+  cursor: pointer; 
+}
+
+.navbar-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.navbar-list{
+  position: fixed;
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar-item{
+  background-color: white;
+  display: inline;
+  margin:1rem;
+  padding: 5px;
+  font-size: 2rem;
+  border-radius: 7px;
+  /* border-bottom:2px solid black ;
+  border-right:2px solid black ; */
+  box-shadow:2px 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.navbar-item:hover{
+  box-shadow:4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button-container{
+  position: fixed;
+  top: 85vh;
+  right: 3vw;
+  height: 20px;
+  text-decoration: none;
+  display: flex;
+  
+}
+
+.compose{
+  height: 60px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  cursor: pointer; 
+  padding-left: 60px;
+  padding-top: 5px;
+  text-decoration: none;
+}
+a {
+  color: #000;
+}
+
+.compose:hover {
+  text-decoration: none; 
+}
+
+.compose-button-img{
+  position: absolute;
+  left:10px;
+  top:12px;
+  width: 40px; 
+  height: 40px;
+  cursor: pointer; 
+}
+
+.footer{
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  position: relative;
+  /* top: 80vh; */
+}
+
+.heart{
+  color: #ff0000;
+}
+
+.item-container{
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  overflow: hidden;
+}
+
+.boxes{
+  border: 2px solid transparent;
+  box-shadow:0.5px 0.5px 1px rgba(0, 0, 0, 0.2) ;
+  margin: 3px;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: 750;
+  overflow: hidden;
+}
+
+.id{
+  width: 5%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.roll{
+  width: 5%;
+  text-align: center;
+}
+.date{
+  width: 7%;
+  text-align: center;
+}
+.name{
+  width: 15%;
+  text-align: center;
+}
+.department{
+  width: 10%;
+  text-align: center;
+}
+.subject{
+  width: 25%;
+  text-align: center;
+}
+.remarks{
+  width: 20%;
+  text-align: center;
+}
+.application-document{
+  width: 10%;
+  text-align: center;
+}
+.iboxes{
+  border: 2px solid transparent;
+  margin: 3px;
+  padding: 5px;
+}
+.item-list-container{
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  overflow: hidden;
+  box-shadow:0.5px 0.5px 1px rgba(0, 0, 0, 0.2) ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.newentry-container{
+  max-width: 600px;
+  margin: 1% auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.create-container{
+  position: fixed;
+  top: 85vh;
+  right: 5vw;
+  height: 20px;
+  text-decoration: none;
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.create{
+  height: 60px;
+  width: 180px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  cursor: pointer; 
+  padding-left: 60px;
+  padding-top: 5px;
+  text-decoration: none;
+}
+
+.create:hover {
+  text-decoration: none; 
+}
+
+.create-button-img{
+  position: absolute;
+  left:10px;
+  top:12px;
+  width: 40px; 
+  height: 40px;
+  cursor: pointer; 
+}
+
+.input-container{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+}
+.input{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.label{
+  display: flex;
+  flex-direction: column;
+}
+.links{
+  text-decoration: none;
+}
+.edit-container{
+  position: fixed;
+  top: 85vh;
+  right: 3vw;
+  height: 20px;
+  text-decoration: none;
+  display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.edit{
+  height: 60px;
+  margin:10px;
+  width: 180px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  cursor: pointer; 
+  padding-left: 60px;
+  padding-top: 5px;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit:hover {
+  text-decoration: none; 
 }
+
+.edit-button-img{
+  position: absolute;
+  left:25px;
+  top:25px;
+  width: 30px; 
+  height: 30px;
+  cursor: pointer; 
+}
+.Outward{
+  height: 60px;
+  width: 180px;
+  margin:10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow:2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  cursor: pointer; 
+  padding-left: 50px;
+  padding-top: 5px;
+  text-decoration: none;
+}
+
+.Outward:hover {
+  text-decoration: none; 
+}
+
+.Outward-button-img{
+  position: absolute;
+  right:145px;
+  top:25px;
+  width: 30px; 
+  height: 30px;
+  cursor: pointer; 
+}
+
