@@ -1,11 +1,12 @@
-from django.contrib import admin
 from django.urls import path
-from .views import *
-urlpatterns = [
-path('', home), 
-path('outward/', outward),
-path('compose/', compose),
-path('inward/edit', update_inward),
+from .views import * 
+
+urlpatterns=[
+path('', home),
 path('inward/', inward),
+path('outward/', outward),
 path('fetch/<int:id>/', fetch),
+path('compose/', compose),
+path('edit/', edit),
+path('change_state/', change_state),
 ]

@@ -1,26 +1,24 @@
 from rest_framework import serializers
-from .models import *
+from .models import Application
 
-class StudentSerializer(serializers.Serializer):
+choices=((0,'inward'),(1, 'outward'))
+
+class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
-        fields='__all__'
+        model = Application
+        fields = '__all__'
 
-        # def create(self,validated_data):
-        #     return Student.objects.create(**validated_data) 
-
-        # def read(self):
-        #     return Student.objects.all()
-
-        # def update(self,instance,validated_data):
-        #     instance.rollno = validated_data.get('rollno', instance.rollno)
-        #     instance.name= validated_data.get('name', instance.name)
-        #     instance.department = validated_data.get('department', instance.department)
-        #     instance.subject= validated_data.get('subject', instance.subject)   
-        #     instance.remarks= validated_data.get('remarks', instance.remarks)   
-        #     instance.application_document= validated_data.get('application_document', instance.application_document)
-        #     instance.state= validated_data.get('state', instance.state)
-        #     instance.save()
-        #     return instance
+        def create(self, validated_data):
+            return Application.objects.create(**validated_data)
         
-
+        def update(self, application, validated_data):
+            application.roll_number=validated_data.get('roll_number', application.roll_number)
+            application.name=validated_data.get('name', application.name)
+            application.department=validated_data.get('department', application.department)
+            application.subject=validated_data.get('subject', application.subject)
+            application.remarks=validated_data.get('remarks', application.remarks) 
+            application.application_document=validated_data.get('application_document', application.application_document)
+            application.save() 
+            return application
+        
+              
